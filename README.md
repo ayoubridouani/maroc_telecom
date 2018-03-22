@@ -2,7 +2,7 @@ hello everyone ..
 you have all permission to use my project :)
 
 Description:
-this project based on java swing + database jdbc + smtp
+this project based on java swing + database jdbc + smtp + technique MVC
 
 I add the pdf file that explains the exercise
 
