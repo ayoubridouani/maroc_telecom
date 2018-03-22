@@ -1,10 +1,13 @@
 import java.awt.Color;
+import java.sql.SQLException;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
@@ -202,5 +205,31 @@ public class View1 extends JFrame {
 	
 	public void action1(String S) {
 		codeFidelo.setText(S);
+	}
+	public void action2(View1 view1,Model1 model) {
+		String Error = "";
+		if(view1.getNumTelephone().getText().length() != 10) Error += "- inserer un valide numero de Telephone\n";
+		if(view1.getCodeFidelo().getPassword().length != 8) Error += "- inserer un valide code Fidelio \n";
+		if(view1.getEmailText().getText().indexOf('@') == -1 || view1.getEmailText().getText().indexOf('.') == -1 || !view1.getEmailText().getText().equals(view1.getConfirmerEmailText().getText())) {
+			Error += "- inserer une valide Adresse Email \n";
+		}
+		if(!view1.getAccepterCondition().isSelected()) Error += "- Accepter Les conditions d'utilisation \n";
+		if(!Error.equals("")) {
+			JOptionPane.showMessageDialog(null, Error, "Error", JOptionPane.ERROR_MESSAGE);
+		}
+		if(Error.equals("")) {
+			model.setNumeroTele(view1.getNumTelephone().getText());
+			model.setCodeFidelioPass(view1.getCodeFidelo().getPassword());
+			model.setEmail(view1.getEmailText().getText());
+			try {
+				if(model.verifierSurBaseDonne()>0) {		
+					Model1 modelk = new Model1();
+					View2 vk = new View2(modelk);
+					new Controller(vk,modelk);
+				}
+				else JOptionPane.showMessageDialog(null, "Service non disponible pour les clients Jawal","Error",JOptionPane.ERROR_MESSAGE);
+			} catch (SQLException e) {
+			}
+		}
 	}
 }
