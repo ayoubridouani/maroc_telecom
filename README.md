@@ -10,5 +10,5 @@ First in your project (Build Patch -> Add External Archives -> ...). after this 
 
 I include for the project:
 
-- executable jar to test directly in any operating system
-- executable exe to test in windows
+- executable jar to test directly in any operating system.
+- executable exe to test in windows.
