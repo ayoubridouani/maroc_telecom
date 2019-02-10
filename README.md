@@ -1,12 +1,14 @@
-hello everyone ..
-you have all permission to use my project :)
+hello everyone
+
+you have all permission to use this project
 
 Description:
+
 this project based on java swing + database jdbc + smtp + technique MVC
 
 I add the pdf file that explains the exercise
 
-First in your project (Build Patch -> Add External Archives -> ...). after this change the directory of all images in the code and config your database with file "config.sql" insert all column in database and run the project :)
+First in your project (Build Patch -> Add External Archives -> ...). after this change the directory of all images in the code and config your database with file "config.sql" insert all column in database and run the project
 
 I include for the project:
 
